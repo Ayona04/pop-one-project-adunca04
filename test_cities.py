@@ -16,7 +16,18 @@ def test_compute_total_distance():
                                distance( 44.95, -93.094, 38.197274, -84.86311)
 
 def test_swap_cities():
-    '''add your tests'''
+    road_map1 =  [('Colorado', 'Denver', '39.7391667', '-104.984167'),\
+                  ('Connecticut', 'Hartford', '41.767', '-72.677'),\
+                  ('Delaware', 'Dover', '39.161921', '-75.526755'),\
+                  ('Florida', 'Tallahassee', '30.4518', '-84.27277')]
+	new_road_map1 = [('Colorado', 'Denver', '39.7391667', '-104.984167'),\
+	  ('Connecticut', 'Hartford', '41.767', '-72.677'),\
+	  ('Florida', 'Tallahassee', '30.4518', '-84.27277'),\
+	  ('Delaware', 'Dover', '39.161921', '-75.526755')]
+	new_total_distance1 = compute_total_distance(new_road_map1)
+	assert (swap_cities(road_map1,1,3)),\
+	(new_road_map1, new_total_distance1)
+    
 
 def test_shift_cities():
     '''add your tests'''
