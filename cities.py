@@ -66,6 +66,7 @@ def swap_cities(road_map, index1, index2):
     pass
 
 def shift_cities(road_map):
+    return (road_map)
     
     """
     For every index i in the `road_map`, the city at the position i moves
