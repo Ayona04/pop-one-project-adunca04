@@ -1,5 +1,5 @@
-def read_cities(file_name):
-    file = open(file_name,'r')
+def read_cities('city-data.txt'):
+    file = open('city-data.txt','r')
     road_map = []
     for line in file:
         road_map.append(tuple(line.strip().split('\t')))
@@ -66,6 +66,8 @@ def swap_cities(road_map, index1, index2):
     pass
 
 def shift_cities(road_map):
+    for i in road_map:
+        i = road_map[-1:] + road_map[:-1] 
     return (road_map)
     
     """
@@ -102,7 +104,7 @@ def find_best_cycle(road_map):
     pass
 
 def print_map(road_map):
-    road_map = read_cities("city_data.txt")
+    road_map = read_cities("city-data.txt")
     print_cities(road_map)
     compute_total_distance(road_map)
     find_best_cycle(road_map)
