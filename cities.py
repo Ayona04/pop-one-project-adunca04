@@ -68,6 +68,7 @@ def swap_cities(road_map, index1, index2):
 def shift_cities(road_map):
     for i in road_map:
         i = road_map[-1:] + road_map[:-1] 
+        i = i+1
     return (road_map)
     
     """
@@ -80,14 +81,14 @@ def shift_cities(road_map):
 def find_best_cycle(road_map):
     shortest_distance = None
     best_cycle = road_map[:]
-    for n in range(0, 7000):
+    for n in range(0, 10000):
         index1 = random.randint(0, len(road_map) - 1)
         index2 = random.randint(0, len(road_map) - 1)
         (new_cycle1, distance1) = swap_cities(best_cycle, index1, index2)  
         if shortest_distance is None or distance1 < shortest_distance:
             shortest_distance = distance1
             best_cycle = new_cycle1
-    for n in range(0, 3000):
+    for n in range(0, 10000):
         index = random.randint(0, len(road_map) - 1)
         (new_cycle2, distance2) = swap_adjacent_cities(best_cycle, index)
         if distance2 < shortest_distance:
