@@ -99,6 +99,8 @@ def shift_cities(road_map, index):
     """
     pass
 
+import random
+random.random() * 10000
 def find_best_cycle(road_map):
     shortest_distance = None
     best_cycle = road_map[:]
@@ -111,7 +113,7 @@ def find_best_cycle(road_map):
             best_cycle = new_cycle1
     for n in range(0, 10000):
         index = random.randint(0, len(road_map) - 1)
-        (new_cycle2, distance2) = swap_adjacent_cities(best_cycle, index)
+        (new_cycle2, distance2) = shift_cities(best_cycle, index)
         if distance2 < shortest_distance:
             shortest_distance = distance2
             best_cycle = new_cycle2
@@ -154,7 +156,12 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 df = np.loadtxt('city-data.txt', delimeter=',')
 def visualise(road_map):
-    plt.plot([
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.set_xlim([-90, 90])
+    ax.set_ylim([-180, 180])
+    x = []
+    y = [95, 42, 69, 11, 49, 32, 74, 62, 25, 32]
     
 
 if __name__ == "__main__": #keep this in
