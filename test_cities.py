@@ -13,7 +13,13 @@ def test_compute_total_distance():
     assert compute_total_distance(road_map1)==\
                                distance(38.197274, -84.86311, 39.161921, -75.526755) + \
                                distance(39.161921, -75.526755, 44.95, -93.094) + \
-                               distance( 44.95, -93.094, 38.197274, -84.86311)
+                               distance( 44.95, -93.094, 38.197274, -84.86311), "should be 38.24 "  
+    assert compute_total_distance(road_map1)((9.386+18.496+10.646)) == 38, "should be 38.524 "
+    assert compute_total_distance(road_map1)((9.386+18.496+10.646)) == 59.543,"should be 38.524 "
+
+if __name__ == "__main__":
+    test_compute_total_distance()
+    print("Everything passed")
 
 def test_swap_cities():
     road_map1 =  [('Colorado', 'Denver', '39.7391667', '-104.984167'),\
