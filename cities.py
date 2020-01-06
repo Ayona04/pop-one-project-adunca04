@@ -1,6 +1,9 @@
 from math import *
 import random
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
 def distance(lat1degrees, long1degrees, lat2degrees, long2degrees):
     earth_radius = 3956  # miles
     lat1 = radians(lat1degrees)
@@ -79,14 +82,15 @@ def swap_cities(road_map, index1, index2 ):
         (new_road_map, new_total_distance)
 
     Allow for the possibility that `index1=index2`,
-    and handle this case correctly.
+    and handle this case corr
+    ectly.
     """
     pass
 
-def shift_cities(road_map, index):
+def shift_cities(road_map):
     for i in road_map:
         i = road_map[-1:] + road_map[:-1] 
-    return (road_map)
+    return (new_road_map)
     new_road_map = road_map[:]
      for city in road_map:
         city += 1
@@ -151,11 +155,10 @@ def main():
     """
     pass
 
-import pandas as pd
-import matplotlib.pyplot as plt
-%matplotlib inline
-df = np.loadtxt('city-data.txt', delimeter=',')
+
 def visualise(road_map):
+    %matplotlib inline
+    df = np.loadtxt('city-data.txt', delimeter=',')
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.set_xlim([-90, 90])
@@ -167,5 +170,5 @@ def visualise(road_map):
           
 if __name__ == "__main__": #keep this in
     main()
-    print("Best Cyle is:",find_best_cycle(road_map))
+    print("Best Cyle is:" find_best_cycle(road_map))
          
