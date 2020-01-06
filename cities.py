@@ -136,7 +136,7 @@ def print_map(road_map):
     pass
 
 def main():
-    road_map = read_cities("city-data.txt")
+    road_map = read_cities('city-data.txt')
     print_cities(road_map)
     compute_total_distance(road_map)
     find_best_cycle(road_map)
@@ -149,8 +149,10 @@ def main():
 
 import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.read_csv(‘city-data.txt’)
+%matplotlib inline
+df = np.loadtxt('city-data.txt', delimeter=',')
 def visualise(road_map):
+    plt.plot([
     
 
 if __name__ == "__main__": #keep this in
