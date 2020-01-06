@@ -62,12 +62,14 @@ def compute_total_distance(road_map):
     pass
 
 
-def swap_cities(road_map, index):
-    new_road_map = road_map[:]
-    new_road_map[index] = road_map[(index+1) % len(road_map)]
-    new_road_map[(index+1) % len(road_map)] = road_map[index]
+def swap_cities(road_map, index1, index2 ):
+  new_road_map = road_map[:]
+  if index1 != index2: 
+        original_index = new_road_map[index1]
+        new_road_map[index1] = new_road_map[index2]
+        new_road_map[index2] = original_index
     new_total_distance = compute_total_distance(new_road_map)
-    return (new_road_map, new_total_distance)
+    return ((new_road_map, new_total_distance))
     
     """
     Take the city at location `index` in the `road_map`, and the 
