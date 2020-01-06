@@ -160,8 +160,11 @@ def visualise(road_map):
     ax = fig.add_subplot(111)
     ax.set_xlim([-90, 90])
     ax.set_ylim([-180, 180])
-    x = []
-    y = [95, 42, 69, 11, 49, 32, 74, 62, 25, 32]
+    x = [(road_map[i][2]]
+    y = [(road_map[i][2]]
+    plt.plot(x, y, 'go-')
+    plt.show()     
+          
     
 
 if __name__ == "__main__": #keep this in
