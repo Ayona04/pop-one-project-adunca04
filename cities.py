@@ -88,14 +88,10 @@ def swap_cities(road_map, index1, index2 ):
     pass
 
 def shift_cities(road_map):
-    for i in road_map:
+    for i in range(0,50):
         i = road_map[-1:] + road_map[:-1] 
     return (new_road_map)
-    new_road_map = road_map[:]
-     for city in road_map:
-        city += 1
-        new_road_map.append((city[0], city[1], round(float(city[2]), 1),round(float(city[3]), 1)))
-    return new_road_map
+    new_road_map[i] = road_map[i-1]
     """
     For every index i in the `road_map`, the city at the position i moves
     to the position i+1. The city at the last position moves to the position
