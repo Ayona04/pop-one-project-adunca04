@@ -161,11 +161,11 @@ def visualise(road_map):
     ax.set_xlim([-90, 90])
     ax.set_ylim([-180, 180])
     x = [(road_map[i][2]]
-    y = [(road_map[i][2]]
+    y = [(road_map[i][3]]
     plt.plot(x, y, 'go-')
     plt.show()     
           
-    
-
 if __name__ == "__main__": #keep this in
     main()
+    print("Best Cyle is:",find_best_cycle(road_map))
+         
