@@ -81,7 +81,7 @@ def swap_cities(road_map, index):
     """
     pass
 
-def shift_cities(road_map):
+def shift_cities(road_map, index):
     for i in road_map:
         i = road_map[-1:] + road_map[:-1] 
     return (road_map)
