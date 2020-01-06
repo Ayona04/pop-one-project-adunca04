@@ -35,11 +35,16 @@ def test_swap_cities():
 	assert (swap_cities(road_map1,1,3)),\
 	(new_road_map1, new_total_distance1)
 	
-    assert (swap_cities
-    assert (swap_cities
-    assert (swap_cities
-    assert (swap_cities
-
+    assert (swap_cities(road_map1, 2,3)) == [('Colorado', 'Denver', '39.7391667', '-104.984167'),\
+		                            ('Connecticut', 'Hartford', '41.767', '-72.677'),\
+		                            ('Florida', 'Tallahassee', '30.4518', '-84.27277'),\
+		                            ('Delaware', 'Dover', '39.161921', '-75.526755')]
+    
+	assert (swap_cities(road_map1, 1,2)) == ['Delaware', 'Dover', '39.161921', '-75.526755')
+	                                        ('Colorado', 'Denver', '39.7391667', '-104.984167'),\
+		                                ('Connecticut', 'Hartford', '41.767', '-72.677'),\
+		                                ('Florida', 'Tallahassee', '30.4518', '-84.27277')]
+    
 def test_shift_cities():
       road_map1 = [('Colorado', 'Denver', '39.7391667', '-104.984167'),\
                   ('Connecticut', 'Hartford', '41.767', '-72.677'),\
