@@ -99,8 +99,6 @@ def shift_cities(road_map):
     """
     pass
 
-import random
-random.random() * 10000
 def find_best_cycle(road_map):
     shortest_distance = None
     best_cycle = road_map[:]
