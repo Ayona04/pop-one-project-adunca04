@@ -48,14 +48,29 @@ def print_cities(road_map):
     """ 
     pass
 
+def calc_distance(x1,x2,y1,y2):
+        distance = math.sqrt((x1-x2)**2 + (y1-y2)**2)      
+        return distance
+
 def compute_total_distance(road_map):
     total_distance = 0.0
+ 
     r = road_map
-    i = -1
-    while i < len(r) - 1: 
-        total_distance += distance(float(r[i][2]), float(r[i][3]), float(r[i + 1][2]), float(r[i + 1][3]),float(road_map[(i+1)%len(road_map)][2]), float(road_map[(i+1)%len(road_map)][3])))
-        i += 1
-    return total_distance
+    i = 0
+    n = i+1
+    for i in range(50):
+        x1 = round(float(r[i][2]),2)
+        y1 = round(float(r[i][3]),2)
+    
+        if i==49:
+            n=0
+        else:
+            n = i+1
+        x2 = round(float(r[n][2]),2)
+        y2 = round(float(r[n][3]),2)
+        total_distance += calc_distance(x1,x2,y1,y2)
+
+   return (total_distance)
     """
     Returns, as a floating point number, the sum of the distances of all 
     the connections in the `road_map`. Remember that it's a cycle, so that 
@@ -88,10 +103,9 @@ def swap_cities(road_map, index1, index2 ):
     pass
 
 def shift_cities(road_map):
-    for i in range(0,50):
-        i = road_map[49]: + road_map[:-1] 
+       new_road_map  = road_map[49]: + road_map[0:48]:
     return (new_road_map)
-    new_road_map[i] = road_map[i-1]
+ 
     """
     For every index i in the `road_map`, the city at the position i moves
     to the position i+1. The city at the last position moves to the position
